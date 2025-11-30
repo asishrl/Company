@@ -1,3 +1,4 @@
+/* GLOBAL THEME */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -5,26 +6,29 @@ body {
   color: #e6edf3;
 }
 
-header {
-  background: #161b22;
-  padding: 25px;
-  text-align: center;
-  border-bottom: 1px solid #30363d;
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 
-header h1 { margin: 0; font-size: 2.3rem; }
-.tagline { margin-top: 5px; color: #8b949e; }
-
-nav {
+/* Floating Glass Navigation Bar */
+.glass-nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+  background: rgba(22, 27, 34, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 15px;
   display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 15px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 nav a {
-  color: #58a6ff;
+  margin-left: 20px;
   text-decoration: none;
+  color: #58a6ff;
   font-weight: bold;
 }
 
@@ -33,38 +37,54 @@ nav a {
   text-align: center;
 }
 
-.section {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 10px;
+/* Glassmorphism Card */
+.glass {
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 25px;
+  margin: 20px;
 }
 
-h3 { color: #58a6ff; }
+/* Team Cards */
+.team-card {
+  max-width: 900px;
+  margin: 40px auto;
+}
 
-footer {
+/* Footer */
+.glass-footer {
   text-align: center;
   padding: 20px;
-  border-top: 1px solid #30363d;
   margin-top: 40px;
-  color: #8b949e;
+  backdrop-filter: blur(10px);
+  background: rgba(22, 27, 34, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Fade-in Animation */
 .fade-in {
   opacity: 0;
   transform: translateY(25px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity .8s ease-out, transform .8s ease-out;
 }
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.apply-note {
-  margin-top: 20px;
-  font-style: italic;
-  color: #58a6ff;
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  nav a {
+    margin-left: 10px;
+    font-size: 0.9rem;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+  .glass {
+    margin: 10px;
+    padding: 20px;
+  }
 }
