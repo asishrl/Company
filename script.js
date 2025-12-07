@@ -18,3 +18,9 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+// Stagger animation effect
+const animatedItems = document.querySelectorAll(".glass");
+
+animatedItems.forEach((item, index) => {
+  item.style.transitionDelay = `${index * 0.15}s`;
+});
