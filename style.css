@@ -173,3 +173,34 @@ li:hover {
     padding-top: 90px;
   }
 }
+/* ===== CURSOR GLOW ===== */
+.cursor-glow {
+  position: fixed;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(88,166,255,0.18), transparent 60%);
+  mix-blend-mode: screen;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* ===== 3D HOVER TILT ===== */
+.glass {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ===== HOLOGRAPHIC TEXT ===== */
+h1, h2, h3 {
+  background: linear-gradient(120deg, #58a6ff, #8fd3ff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: holo 6s linear infinite;
+}
+
+@keyframes holo {
+  from { background-position: 0% }
+  to { background-position: 500% }
+}
