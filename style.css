@@ -88,3 +88,50 @@ nav a {
     padding: 20px;
   }
 }
+/* ===== 3D EFFECT SYSTEM ===== */
+
+body {
+  perspective: 1200px;
+}
+
+/* 3D floating cards */
+.glass {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.glass:hover {
+  transform: rotateX(5deg) rotateY(-5deg) translateZ(12px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* 3D Tilt On Scroll */
+.tilt-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-out;
+}
+
+/* 3D Text pop */
+.heading-3d {
+  text-shadow:
+    0 1px 0 rgba(88,166,255,0.4),
+    0 3px 0 rgba(88,166,255,0.3),
+    0 6px 16px rgba(0,0,0,0.6);
+}
+
+/* Floating hologram effect */
+@keyframes hologramFloat {
+  0% { transform: translateY(0) translateZ(0); }
+  50% { transform: translateY(-12px) translateZ(25px); }
+  100% { transform: translateY(0) translateZ(0); }
+}
+
+.hologram {
+  animation: hologramFloat 5s ease-in-out infinite;
+}
+
+/* Mouse-based 3D tilt */
+.tilt-container {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease;
+}
