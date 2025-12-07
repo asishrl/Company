@@ -18,3 +18,11 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+document.addEventListener("scroll", () => {
+  document.querySelectorAll(".fade-in").forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add("visible");
+    }
+  });
+});
