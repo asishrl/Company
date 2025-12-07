@@ -89,3 +89,25 @@ document.querySelectorAll("nav a").forEach(link => {
     link.style.transform = "translate(0,0)";
   });
 });
+// ===== SCI-FI SCANNER LINE =====
+const scanner = document.createElement("div");
+scanner.className = "scanner";
+document.body.appendChild(scanner);
+
+// ===== FAKE AI DATA TERMINAL TEXT EFFECT =====
+document.querySelectorAll("p, li").forEach(el => {
+  el.addEventListener("mouseenter", () => {
+    el.dataset.text = el.innerText;
+    let i = 0;
+    const scramble = setInterval(() => {
+      el.innerText = el.dataset.text
+        .split("")
+        .map((char, idx) =>
+          idx < i ? char : "█▓▒░"[Math.floor(Math.random() * 4)]
+        )
+        .join("");
+      i++;
+      if (i > el.dataset.text.length) clearInterval(scramble);
+    }, 20);
+  });
+});
