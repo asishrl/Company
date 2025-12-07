@@ -88,3 +88,55 @@ nav a {
     padding: 20px;
   }
 }
+/* ================================ */
+/* DNA HELIX ANIMATION BACKGROUND   */
+/* ================================ */
+
+.dna-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.dna-strand {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 100vh;
+  background: linear-gradient(#58a6ff, transparent);
+  animation: dnaWave 6s ease-in-out infinite;
+  opacity: 0.35;
+  filter: blur(0.3px);
+}
+
+@keyframes dnaWave {
+  0% { transform: translateX(0) scaleY(1); }
+  50% { transform: translateX(30px) scaleY(0.85); }
+  100% { transform: translateX(0) scaleY(1); }
+}
+
+/* ================================ */
+/* BRAIN HOLOGRAM GLOW              */
+/* ================================ */
+
+.brain-hologram {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  background:
+    radial-gradient(circle, rgba(88,166,255,0.22), transparent 70%);
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: -2;
+  animation: brainPulse 6s infinite alternate ease-in-out;
+}
+
+@keyframes brainPulse {
+  from { transform: translate(-50%, -50%) scale(1); }
+  to { transform: translate(-50%, -50%) scale(1.12); }
+}
