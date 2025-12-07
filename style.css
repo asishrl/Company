@@ -1,100 +1,66 @@
-/* GLOBAL THEME */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0d1117;
-  color: #e6edf3;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #fff;
 }
 
-.logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-
-/* Floating Glass Navigation Bar */
-.glass-nav {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  backdrop-filter: blur(12px);
-  background: rgba(22, 27, 34, 0.55);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #58a6ff;
-  font-weight: bold;
-}
-
-.hero {
-  padding: 70px 20px;
-  text-align: center;
-}
-
-/* Glassmorphism Card */
 .glass {
-  backdrop-filter: blur(14px);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: 0.3s;
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.glass-nav {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  padding: 20px;
   border-radius: 16px;
-  padding: 25px;
-  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Team Cards */
-.team-card {
-  max-width: 900px;
-  margin: 40px auto;
-}
-
-/* Footer */
 .glass-footer {
   text-align: center;
   padding: 20px;
   margin-top: 40px;
-  backdrop-filter: blur(10px);
-  background: rgba(22, 27, 34, 0.4);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.8;
 }
 
-/* Fade-in Animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity .8s ease-out, transform .8s ease-out;
+.hero {
+  text-align: center;
+  padding-top: 130px;
 }
-.fade-in.visible {
+
+nav a {
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: 0.3s;
+}
+
+nav a:hover {
   opacity: 1;
-  transform: translateY(0);
 }
 
-/* RESPONSIVE */
-@media(max-width: 768px) {
-  nav a {
-    margin-left: 10px;
-    font-size: 0.9rem;
-  }
-  .logo {
-    font-size: 1.2rem;
-  }
-  .glass {
-    margin: 10px;
-    padding: 20px;
-  }
-}
 .fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 1s ease;
+  animation: fadeIn 1.4s ease;
 }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
